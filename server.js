@@ -5,7 +5,7 @@ import axios from "axios";
 import { schedule } from "node-cron"
 import { user } from "./model/test";
 config()
-const key = process.env.key
+const key = "5259090349:AAHQJzbGx-_mE1dmHec1IbP8F97t2ByIdXk"
 const bot = new Bot(key);
 
 bot.command("start", (ctx) => {
