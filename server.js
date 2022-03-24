@@ -47,7 +47,7 @@ schedule("0 18 * * * * *", async () => {
 
 async function sendMessage(name, days, group) {
     try {
-        let url = "https://api.telegram.org/bot" + process.env.key + "/sendMessage" + "?chat_id=-" + group + "&text=" + `${name} sizning IELTS topshirishingizga ${days} qoldi.!`
+        let url = "https://api.telegram.org/bot" + process.env.key + "/sendMessage" + "?chat_id=-" + group + "&text=" + `${name} sizning IELTS topshirishinggizga ${days} kun qoldi, Tezlashamiz.!`
         await axios.get(url)
     } catch (error) {
         throw error
