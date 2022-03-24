@@ -8,6 +8,9 @@ import { user } from "./model/test";
 const app = express()
 app.use(express.json())
 config()
+app.get("/", (req, res) => {
+    res.json({ succuss: true, message: "Hello World" })
+})
 const key = "5259090349:AAHQJzbGx-_mE1dmHec1IbP8F97t2ByIdXk"
 const bot = new Bot(key, {
     client: {
