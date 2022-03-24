@@ -5,7 +5,9 @@ import { connectDB } from "./db/connect"
 import axios from "axios";
 import { schedule } from "node-cron"
 import { user } from "./model/test";
+import cors from "cors"
 const app = express()
+app.use(cors())
 app.use(express.json())
 config()
 app.get("/", (req, res) => {
