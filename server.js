@@ -9,10 +9,10 @@ const app = express()
 app.use(express.json())
 config()
 const key = "5259090349:AAHQJzbGx-_mE1dmHec1IbP8F97t2ByIdXk"
-const bot = new Bot(key);
+const bot = new Bot(key)
 app.use(webhookCallback(bot, "express"))
 app.listen(3333, async () => {
-    await bot.api.setWebhook("https://tgbotenglish.herokuapp.com/5259090349:AAHQJzbGx-_mE1dmHec1IbP8F97t2ByIdXk")
+    await bot.api.setWebhook("https://tgbotenglish.herokuapp.com/5259090349:AAHQJzbGx-_mE1dmHec1IbP8F97t2ByIdXk",)
 })
 bot.command("start", (ctx) => {
     ctx.reply("Hello, I am IELTS Notifications Bot")
