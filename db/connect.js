@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
+const mongoose = require('mongoose')
 
-export const connectDB = async () => {
+const connectDB = async () => {
     try {
         await mongoose.connect("mongodb+srv://alisher:alisher2211@cluster0.smo7f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
         console.log("MongoDB Connected...");
@@ -9,3 +9,4 @@ export const connectDB = async () => {
     }
 }
 connectDB()
+module.exports = connectDB

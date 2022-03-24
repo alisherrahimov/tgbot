@@ -1,29 +1,13 @@
-import express from "express"
-import { Bot, webhookCallback } from "grammy"
-import { config } from "dotenv"
-import { connectDB } from "./db/connect"
-import axios from "axios";
-import { schedule } from "node-cron"
-import { user } from "./model/test";
-import cors from "cors"
-const app = express()
-app.use(cors())
-app.use(express.json())
+const { Bot } = require("grammy")
+const { config } = require("dotenv")
+const db = require("./db/connect")
+const axios = require("axios")
+const { schedule } = require("node-cron")
+const { user } = require("./model/test")
 config()
-app.get("/", (req, res) => {
-    res.json({ succuss: true, message: "Hello World" })
-})
 const key = "5259090349:AAHQJzbGx-_mE1dmHec1IbP8F97t2ByIdXk"
-const bot = new Bot(key, {
-    client: {
-        // We accept the drawback of webhook replies for typing status.
-        canUseWebhookReply: (method) => method === "sendChatAction",
-    },
-})
-app.use(webhookCallback(bot, "express"))
-app.listen(3333, async () => {
-    await bot.api.setWebhook("https://tgbotenglish.herokuapp.com/5259090349:AAHQJzbGx-_mE1dmHec1IbP8F97t2ByIdXk",)
-})
+const bot = new Bot(key)
+
 bot.command("start", (ctx) => {
     ctx.reply("Hello, I am IELTS Notifications Bot")
 })
@@ -71,3 +55,4 @@ async function sendMessage(name, days, group) {
 }
 
 bot.start()
+module.exports = bot
