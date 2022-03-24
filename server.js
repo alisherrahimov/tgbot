@@ -1,4 +1,4 @@
-import { Bot } from "grammy"
+import { Bot, webhookCallback } from "grammy"
 import { config } from "dotenv"
 import { connectDB } from "./db/connect"
 import axios from "axios";
@@ -7,7 +7,7 @@ import { user } from "./model/test";
 config()
 const key = "5259090349:AAHQJzbGx-_mE1dmHec1IbP8F97t2ByIdXk"
 const bot = new Bot(key);
-
+bot.api.setWebhook("https://tgbotenglish.herokuapp.com/5259090349:AAHQJzbGx-_mE1dmHec1IbP8F97t2ByIdXk")
 bot.command("start", (ctx) => {
     ctx.reply("Hello, I am IELTS Notifications Bot")
 })
