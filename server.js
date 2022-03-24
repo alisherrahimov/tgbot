@@ -43,7 +43,7 @@ schedule("0 18 * * * * *", async () => {
     } catch (error) {
         throw error
     }
-})
+}, { timezone: "Asia/Tashkent" })
 
 async function sendMessage(name, days, group) {
     try {
