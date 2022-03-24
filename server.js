@@ -9,7 +9,12 @@ const app = express()
 app.use(express.json())
 config()
 const key = "5259090349:AAHQJzbGx-_mE1dmHec1IbP8F97t2ByIdXk"
-const bot = new Bot(key)
+const bot = new Bot(key, {
+    client: {
+        // We accept the drawback of webhook replies for typing status.
+        canUseWebhookReply: (method) => method === "sendChatAction",
+    },
+})
 app.use(webhookCallback(bot, "express"))
 app.listen(3333, async () => {
     await bot.api.setWebhook("https://tgbotenglish.herokuapp.com/5259090349:AAHQJzbGx-_mE1dmHec1IbP8F97t2ByIdXk",)
