@@ -3,7 +3,7 @@ const { config } = require("dotenv")
 const db = require("./db/connect")
 const axios = require("axios")
 const { schedule } = require("node-cron")
-const { user } = require("./model/test")
+const user = require("./model/test")
 config()
 const key = "5259090349:AAHQJzbGx-_mE1dmHec1IbP8F97t2ByIdXk"
 const bot = new Bot(key)
