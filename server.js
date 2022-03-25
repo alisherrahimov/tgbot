@@ -21,7 +21,7 @@ bot.on("message::bold", async (ctx) => {
     bot.api.sendMessage(ctx.chat.id, `${nickname} Bu o'quvchi ro'yxatga olindi.`)
 })
 
-schedule("0 18 * * * * *", async () => {
+schedule("0 19 * * * * *", async () => {
     try {
         user.find({}).then(async (data) => {
             let today = new Date().getDay()
