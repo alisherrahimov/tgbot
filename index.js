@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const bot = require("./server");
+const bot = require("./bot");
 const { webhookCallback } = require("grammy");
 const { config } = require("dotenv");
 config()
