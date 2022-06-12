@@ -18,6 +18,6 @@ app.use("/", (req, res) => {
 app.use(express.json())
 app.use(`/${token}`, webhookCallback(bot, "express"));
 app.listen(PORT || 3001, '0.0.0.0', async () => {
-    await bot.api.setWebhook(`https://tgbot-alisherrahimov.vercel.app/${token}`);
+    await bot.api.setWebhook(`https://47.254.250.211:443/${token}`);
     console.log(`server running ${PORT} in port`)
 });
