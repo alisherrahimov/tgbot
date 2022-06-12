@@ -37,3 +37,4 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run start
         run: yarn start
+      - run: pm2 restart NodeApp
