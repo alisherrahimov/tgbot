@@ -35,6 +35,5 @@ jobs:
         run: yarn install
 
       # Runs a set of commands using the runners shell
-      - name: Run start
-        run: yarn start
-      - run: pm2 restart NodeApp
+      - name: Restart App       
+        run: pm2 restart NodeApp
