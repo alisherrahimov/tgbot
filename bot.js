@@ -9,7 +9,7 @@ const key = "5259090349:AAHQJzbGx-_mE1dmHec1IbP8F97t2ByIdXk";
 const bot = new Bot(key);
 
 bot.command("start", (ctx) => {
-  ctx.reply("Hello, I am IELTS Notifications Botasdasdas");
+  ctx.reply("Hello, I am IELTS Notifications Bot!");
 });
 bot.on("message::bold", async (ctx) => {
   let data = ctx.message.text.split(" ");
