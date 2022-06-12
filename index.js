@@ -18,5 +18,5 @@ app.use(express.json());
 app.use(`/${token}`, webhookCallback(bot, "express"));
 app.listen(3001, "0.0.0.0", async () => {
   await bot.api.setWebhook(`https://47.254.250.211:443/${token}`);
-  console.log(`server running ${PORT} in port`);
+  console.log(`server running 3001 in port`);
 });
